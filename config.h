@@ -3,7 +3,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1.5;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -13,7 +13,7 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
+static const int smartgaps          = 4;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
@@ -41,7 +41,9 @@ static const unsigned int alphas[][3]      = {
 
 /* tagging */
 //static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
-static const char *tags[] = { "\uf120", "\uf7ae", "\uf121", "\uf04b", "\ue62e", "\uf251", "\ue727", "\uf537", "\uf684" };
+//static const char *tags[] = { "\uf120", "\uf7ae", "\uf121", "\uf04b", "\ue62e", "\uf251", "\ue727", "\uf537", "\uf684" };
+//static const char *tags[] = { "😅₁", "🦋₂", "🎹₃", "🔯₄", "💕₅", "🕍₆", "😷₇", "🛦₈", "☂₉" };
+static const char *tags[] = { "₁", "₂", "₃", "♻₄", "₅", "₆", "₇", "₈", "₉" }; 
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -84,20 +86,21 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
+static const char *explorercmd[]  = { "ranger", NULL };
 
-//static const char *upvol[]   = { "/home/david/scripts/vol-up.sh",  NULL };
-//static const char *downvol[] = { "/home/david/scripts/vol-down.sh",  NULL };
-//static const char *mutevol[] = { "/home/david/scripts/vol-toggle.sh",  NULL };
+//static const char *upvol[]   = { "/home/bear/scripts/vol-up.sh",  NULL };
+//static const char *downvol[] = { "/home/bear/scripts/vol-down.sh",  NULL };
+//static const char *mutevol[] = { "/home/bear/scripts/vol-toggle.sh",  NULL };
 
-//static const char *wpcmd[]  = { "/home/david/scripts/wp-change.sh", NULL };
-//static const char *sktogglecmd[]  = { "/home/david/scripts/sck-tog.sh", NULL };
+//static const char *wpcmd[]  = { "/home/bear/scripts/wp-change.sh", NULL };
+//static const char *sktogglecmd[]  = { "/home/bear/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-//static const char *setcolemakcmd[]  = { "/home/david/scripts/setxmodmap-colemak.sh", NULL };
-//static const char *setqwertycmd[]  = { "/home/david/scripts/setxmodmap-qwerty.sh", NULL };
+//static const char *setcolemakcmd[]  = { "/home/bear/scripts/setxmodmap-colemak.sh", NULL };
+//static const char *setqwertycmd[]  = { "/home/bear/scripts/setxmodmap-qwerty.sh", NULL };
 
-//static const char *suspendcmd[]  = { "/home/david/scripts/suspend.sh", NULL };
+//static const char *suspendcmd[]  = { "/home/bear/scripts/suspend.sh", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
@@ -106,6 +109,7 @@ static Key keys[] = {
 	{ MODKEY,                XK_p,                    spawn,            {.v = dmenucmd } },
 	{ MODKEY,                XK_Return,               spawn,            {.v = termcmd } },
 	{ MODKEY,                XK_c,                    spawn,            {.v = browsercmd } },
+	{ MODKEY,                XK_e,                    spawn,            {.v = explorercmd } },
 	//{ MODKEY|ShiftMask,    XK_w,                    spawn,              {.v = setqwertycmd } },
 	//{ MODKEY|ShiftMask,    XK_m,                    spawn,              {.v = setcolemakcmd } },
 	//{ MODKEY|ShiftMask,    XK_s,                    spawn,              {.v = suspendcmd } },
