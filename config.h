@@ -19,10 +19,10 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "cascadia code:size=16" };
 static const char dmenufont[]       = "cascadia code:size=16";
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#000099";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#ffffff";
+static const char col_gray3[]       = "#aa00ff";
+static const char col_gray4[]       = "#00ffff";
 static const char col_cyan[]        = "#37474F";
 static const char col_border[]        = "#42A5F5";
 static const unsigned int baralpha = 0x0c;
